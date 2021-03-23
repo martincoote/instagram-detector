@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    The browser is <span>not Instagram</span>
+  </h1>
+  <script>
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
+    console.dir(ua);
+
+    if (document.documentElement.classList ){
+      if (isInstagram) {
+        window.document.body.classList.add('instagram-browser');
+        document.querySelector('h1 span').innerText = "Instagram"
+      }
+    }
+  </script>
+</body>
+</html>
